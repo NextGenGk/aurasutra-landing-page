@@ -139,7 +139,7 @@ export default function Testimonials() {
                   marginBottom: 8,
                   textAlign: 'left',
                 }}>
-                  "
+                  &quot;
                 </div>
                 <p style={{
                   fontSize: 'clamp(16px, 2vw, 19px)',
