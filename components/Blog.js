@@ -105,13 +105,9 @@ function BlogCard({ post, index, large }) {
       }}
     >
       <div
-        className="img-zoom"
+        className={`img-zoom flex-shrink-0 relative overflow-hidden ${large ? 'h-[200px] lg:h-[240px]' : 'h-[160px]'}`}
         style={{
-          height: large ? 240 : 160,
           background: post.tagColor + '15',
-          overflow: 'hidden',
-          flexShrink: 0,
-          position: 'relative',
         }}
       >
         <img 
@@ -181,9 +177,9 @@ export default function Blog() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="blog" style={{ padding: '100px 0', background: 'var(--light-bg)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px' }}>
-        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 52, flexWrap: 'wrap', gap: 20 }} ref={ref}>
+    <section id="blog" className="py-16 lg:py-[100px]" style={{ background: 'var(--light-bg)' }}>
+      <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 lg:mb-[52px] flex-wrap gap-5" ref={ref}>
           <div>
             <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}}>
               <span className="pill-badge">
@@ -218,7 +214,7 @@ export default function Blog() {
           </motion.div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '24px', alignItems: 'start' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-[24px] items-start">
           <BlogCard post={posts[0]} index={0} large={true} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {posts.slice(1).map((post, i) => (

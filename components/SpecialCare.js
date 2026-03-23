@@ -67,8 +67,8 @@ export default function SpecialCare() {
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: true })
 
   return (
-    <section style={{ padding: '100px 0', background: '#fff' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }} ref={ref}>
+    <section className="py-16 lg:py-[100px]" style={{ background: '#fff' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-[72px] items-center w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]" ref={ref}>
         {/* Left */}
         <div>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}}>
@@ -103,7 +103,7 @@ export default function SpecialCare() {
             transition={{ delay: 0.25 }}
             style={{ color: 'var(--muted)', fontSize: 16, lineHeight: 1.8, marginBottom: 36, maxWidth: 480 }}
           >
-            From newborn screenings to senior wellness programs, AuraSutra provides continuous, compassionate care across every life stage. Our community health initiatives have served over 200,000 families.
+            From newborn screenings to senior wellness programs, AuraSutra provides continuous, compassionate care across every life stage. Our community health initiatives have served over 500 families.
           </motion.p>
 
           {/* Service links */}
@@ -202,10 +202,10 @@ export default function SpecialCare() {
           </p>
 
           {/* Stats inside card */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] mb-[32px]">
             {[
-              ['200K+', 'Community Members Served'],
-              ['50+', 'Free Health Camps/Year'],
+              ['500+', 'Community Members Served'],
+              ['5+', 'Free Health Camps/Year'],
               ['98%', 'Patient Satisfaction'],
               ['0 Cost', 'Low-Income Screenings'],
             ].map(([val, label], i) => (

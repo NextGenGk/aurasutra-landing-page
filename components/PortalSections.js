@@ -80,8 +80,8 @@ export default function PortalSections() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="portals" style={{ padding: '100px 0', background: '#fff' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px' }} ref={ref}>
+    <section id="portals" className="py-16 lg:py-[100px]" style={{ background: '#fff' }}>
+      <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -108,7 +108,7 @@ export default function PortalSections() {
           </motion.h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-[32px]">
           {portals.map((portal, i) => (
             <motion.div
               key={portal.role}
@@ -191,13 +191,10 @@ export default function PortalSections() {
                   {portal.desc}
                 </p>
 
-                <ul style={{
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-4" style={{
                   listStyle: 'none',
                   padding: 0,
                   margin: '0 0 40px 0',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '16px'
                 }}>
                   {portal.features.map((feature, idx) => (
                     <li key={idx} style={{

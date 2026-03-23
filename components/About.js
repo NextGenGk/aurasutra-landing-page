@@ -59,7 +59,7 @@ export default function About() {
 
   return (
     <section id="about" style={{ background: 'var(--light-bg)', padding: '100px 0' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[80px] items-center w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]">
         {/* Left Text */}
         <div>
           <AnimatedSection delay={0.1}>
@@ -148,7 +148,7 @@ export default function About() {
         </div>
 
         {/* Right — Image collage */}
-        <div ref={ref} style={{ position: 'relative', height: 560 }}>
+        <div ref={ref} className="relative h-[440px] lg:h-[560px] mt-12 lg:mt-0 lg:order-2">
           {/* Main image */}
           <AnimatedSection delay={0.2} direction="right">
             <div style={{
@@ -208,7 +208,7 @@ export default function About() {
 
           {/* Floating badge */}
           <motion.div
-            className="float-anim"
+            className="float-anim hidden sm:flex"
             style={{
               position: 'absolute',
               bottom: 80,
@@ -217,7 +217,6 @@ export default function About() {
               borderRadius: 16,
               padding: '16px 20px',
               boxShadow: '0 10px 40px rgba(0,0,0,0.12)',
-              display: 'flex',
               alignItems: 'center',
               gap: 12,
               zIndex: 10,
@@ -233,7 +232,7 @@ export default function About() {
               {icons.Awards}
             </div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: 16, color: 'var(--dark-text)' }}>12+ Years</div>
+              <div style={{ fontWeight: 800, fontSize: 16, color: 'var(--dark-text)' }}>2+ Years</div>
               <div style={{ fontSize: 12, color: 'var(--muted)' }}>Excellence in Care</div>
             </div>
           </motion.div>

@@ -70,12 +70,8 @@ export default function BusinessServices() {
   return (
     <section
       ref={ref}
-      style={{
-        padding: '100px 0',
-        background: 'linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%)',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
+      className="relative overflow-hidden py-16 lg:py-[100px]"
+      style={{ background: 'linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%)' }}
     >
       {/* Decorative elements */}
       <motion.div
@@ -89,7 +85,7 @@ export default function BusinessServices() {
         }}
       />
       
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '0 40px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+      <div className="relative z-[1] w-full max-w-[720px] mx-auto px-6 lg:px-[40px] text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -195,7 +191,7 @@ export default function BusinessServices() {
         >
           {[
             { icon: icons.Lock, label: 'Secure & HIPAA Compliant' },
-            { icon: icons.UserGroup, label: 'Join 12,480+ Members' },
+            { icon: icons.UserGroup, label: 'Join 240+ Members' },
             { icon: icons.Star, label: '4.9/5 Trust Score' },
           ].map((badge, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'rgba(255,255,255,0.7)', fontSize: 14 }}>

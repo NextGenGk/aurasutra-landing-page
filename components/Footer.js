@@ -61,13 +61,8 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      style={{
-        background: 'var(--dark-bg)',
-        color: '#fff',
-        padding: '80px 0 0',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
+      className="relative overflow-hidden pt-12 lg:pt-[80px]"
+      style={{ background: 'var(--dark-bg)', color: '#fff' }}
     >
       {/* Decorative element */}
       <div className="spin-30" style={{
@@ -77,8 +72,8 @@ export default function Footer() {
         borderRadius: '50%', pointerEvents: 'none',
       }} />
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr', gap: '48px', marginBottom: 60 }}>
+      <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr] gap-10 lg:gap-[48px] mb-12 lg:mb-[60px]">
           {/* Logo + desc */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -208,15 +203,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4 }}
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 24,
-            padding: '32px 0',
-            borderTop: '1px solid rgba(255,255,255,0.08)',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
-            marginBottom: 32,
-          }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-[24px] py-8 lg:py-[32px] mb-8 lg:mb-[32px] border-y border-[rgba(255,255,255,0.08)]"
         >
           {[
             { 
@@ -272,14 +259,7 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingBottom: 36,
-            flexWrap: 'wrap',
-            gap: 12,
-          }}
+          className="flex flex-col sm:flex-row justify-between items-center pb-8 lg:pb-[36px] gap-4 lg:gap-[12px] text-center sm:text-left"
         >
           <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: 13 }}>
             © {new Date().getFullYear()} AuraSutra Medical Care. All rights reserved.

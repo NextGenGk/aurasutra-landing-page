@@ -91,9 +91,9 @@ export default function Hero() {
         pointerEvents: 'none',
       }} />
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '80px 40px', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] lg:gap-[60px] items-center w-full max-w-[1280px] mx-auto px-[20px] pb-[40px] pt-[20px] lg:px-[40px] lg:py-[80px]">
         {/* Left */}
-        <div>
+        <div className="order-2 lg:order-1 mt-[20px] lg:mt-0">
           <motion.div {...slideLeft(0.2)}>
             <span className="pill-badge">
               <span style={{ color: 'var(--primary)', display: 'inline-flex', marginRight: 6 }}>{icons.Sparkle}</span>
@@ -188,13 +188,12 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-          style={{ position: 'relative' }}
+          className="relative order-1 lg:order-2"
         >
-          <div style={{
+          <div className="h-[340px] sm:h-[440px] lg:h-[560px]" style={{
             borderRadius: '32px',
             overflow: 'hidden',
             background: 'linear-gradient(135deg, #c8e6c9, #a5d6a7)',
-            height: '560px',
             position: 'relative',
           }}>
             <img 
@@ -217,14 +216,14 @@ export default function Hero() {
                 fontFamily: 'var(--font-heading)',
               }}>
                 <div style={{ fontSize: 13, opacity: 0.8, marginBottom: 4 }}>Happy Patients This Year</div>
-                <div style={{ fontSize: 36, fontWeight: 800 }}>12,480+</div>
+                <div style={{ fontSize: 36, fontWeight: 800 }}>240+</div>
               </div>
             </div>
           </div>
 
           {/* Floating stat badge */}
           <motion.div
-            className="float-anim"
+            className="float-anim hidden sm:flex"
             style={{
               position: 'absolute',
               bottom: '40px',
@@ -233,9 +232,9 @@ export default function Hero() {
               borderRadius: '16px',
               padding: '16px 20px',
               boxShadow: '0 10px 40px rgba(0,0,0,0.12)',
-              display: 'flex',
               alignItems: 'center',
               gap: '12px',
+              zIndex: 10,
             }}
           >
             <div style={{ width: 44, height: 44, background: 'rgba(76,175,80,0.12)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fbbf24' }}>
@@ -248,7 +247,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            className="float-slow"
+            className="float-slow hidden sm:block"
             style={{
               position: 'absolute',
               bottom: '40px',
@@ -258,10 +257,11 @@ export default function Hero() {
               padding: '16px 20px',
               color: '#fff',
               boxShadow: '0 10px 40px rgba(76,175,80,0.4)',
+              zIndex: 10,
             }}
           >
             <div style={{ fontSize: '12px', opacity: 0.85, marginBottom: 2 }}>Certified Specialists</div>
-            <div style={{ fontWeight: 800, fontSize: '22px' }}>142+</div>
+            <div style={{ fontWeight: 800, fontSize: '22px' }}>12+</div>
           </motion.div>
         </motion.div>
       </div>

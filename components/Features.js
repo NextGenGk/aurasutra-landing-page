@@ -159,8 +159,8 @@ export default function Features() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="features" style={{ padding: '100px 0', background: '#fff' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px' }}>
+    <section id="features" className="py-16 lg:py-[100px]" style={{ background: '#fff' }}>
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-[40px]">
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <motion.div
@@ -198,7 +198,7 @@ export default function Features() {
         </div>
 
         {/* Two-column layout */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
           {/* Feature list */}
           <div>
             {features.map((feature, i) => (
@@ -257,8 +257,8 @@ export default function Features() {
                 </p>
 
                 {/* Stats row */}
-                <div style={{ display: 'flex', gap: 32, marginTop: 36 }}>
-                  {[['485+', 'Patients/month'], ['98%', 'Satisfaction'], ['24/7', 'Availability']].map(([val, label], i) => (
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mt-8">
+                  {[['25+', 'Patients/month'], ['98%', 'Satisfaction'], ['24/7', 'Availability']].map(([val, label], i) => (
                     <div key={i} style={{ textAlign: 'center' }}>
                       <div style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 800, color: activeIndex !== null ? features[activeIndex].color : 'var(--primary)' }}>{val}</div>
                       <div style={{ fontSize: '12px', color: 'var(--muted)', marginTop: 2 }}>{label}</div>

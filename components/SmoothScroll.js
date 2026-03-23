@@ -23,5 +23,5 @@ export default function SmoothScroll({ children }) {
     return () => { if (lenis) lenis.destroy() }
   }, [])
 
-  return <div ref={wrapRef}>{children}</div>
+  return <div ref={wrapRef} style={{ overflowX: 'hidden', width: '100%' }}>{children}</div>
 }

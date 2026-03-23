@@ -61,8 +61,8 @@ const icons = {
 
 const stats = [
   { value: 4, suffix: '+', label: 'Specialized Centers' },
-  { value: 124, suffix: '+', label: 'Expert Clinicians' },
-  { value: 9240, suffix: '+', label: 'Happy Recoveries' },
+  { value: 14, suffix: '+', label: 'Expert Clinicians' },
+  { value: 240, suffix: '+', label: 'Happy Recoveries' },
   { value: 24, suffix: '/7', label: 'Rapid Response' },
 ]
 
@@ -78,8 +78,8 @@ export default function WhyChooseUs() {
   const [statsRef, statsInView] = useInView({ threshold: 0.3, triggerOnce: true })
 
   return (
-    <section id="why" style={{ padding: '100px 0', background: '#fff' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px' }}>
+    <section id="why" className="py-16 lg:py-[100px]" style={{ background: '#fff' }}>
+      <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]">
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <motion.div
@@ -109,12 +109,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Stats Row */}
-        <div ref={statsRef} style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '24px',
-          marginBottom: 72,
-        }}>
+        <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[24px] mb-12 lg:mb-[72px]">
           {stats.map((s, i) => (
             <motion.div
               key={i}
@@ -144,22 +139,16 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Image collage + Reasons */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[72px] items-center">
           {/* Left — image collage */}
-          <div style={{ position: 'relative', height: 500 }}>
+          <div className="relative h-[340px] sm:h-[440px] lg:h-[500px]">
             {/* Large main image */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2, duration: 0.7 }}
+              className="absolute top-0 left-0 right-[20px] sm:right-[60px] h-[220px] sm:h-[300px] overflow-hidden rounded-[24px]"
               style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 60,
-                height: 300,
-                borderRadius: '24px',
-                overflow: 'hidden',
                 boxShadow: '0 20px 60px rgba(76,175,80,0.2)',
               }}
             >
@@ -186,14 +175,8 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, x: 40 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.35, duration: 0.7 }}
+              className="absolute top-[20px] right-0 w-[140px] sm:w-[190px] h-[160px] sm:h-[220px] overflow-hidden rounded-[20px]"
               style={{
-                position: 'absolute',
-                top: 20,
-                right: 0,
-                width: 190,
-                height: 220,
-                borderRadius: '20px',
-                overflow: 'hidden',
                 boxShadow: '0 15px 40px rgba(0,0,0,0.1)',
               }}
             >
@@ -209,14 +192,8 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.7 }}
+              className="absolute bottom-0 left-[16px] sm:left-[40px] right-[16px] sm:right-auto sm:w-[340px] h-[140px] sm:h-[180px] overflow-hidden rounded-[20px]"
               style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 40,
-                width: 340,
-                height: 180,
-                borderRadius: '20px',
-                overflow: 'hidden',
                 boxShadow: '0 15px 40px rgba(0,0,0,0.12)',
               }}
             >
@@ -226,10 +203,10 @@ export default function WhyChooseUs() {
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
               />
               <div style={{
-                position: 'absolute', bottom: 20, left: 20, right: 20,
+                position: 'absolute', bottom: 12, left: 12, right: 12,
                 display: 'flex', gap: 16, alignItems: 'center',
                 background: 'rgba(27,94,32,0.85)', backdropFilter: 'blur(4px)',
-                padding: '12px', borderRadius: 12,
+                padding: '10px 12px', borderRadius: 12,
               }}>
                 <div style={{ flex: 1, height: 4, background: 'rgba(255,255,255,0.3)', borderRadius: 2 }}>
                   <div style={{ width: '92%', height: '100%', background: '#fff', borderRadius: 2 }} />
@@ -240,17 +217,9 @@ export default function WhyChooseUs() {
 
             {/* Floating badge */}
             <motion.div
-              className="float-anim"
+              className="float-anim absolute -left-[8px] sm:-left-[24px] top-[140px] sm:top-[200px] bg-white rounded-[16px] p-[12px_16px] sm:p-[16px_20px] flex items-center gap-[12px] z-10"
               style={{
-                position: 'absolute',
-                top: 200,
-                left: -24,
-                background: '#fff',
-                borderRadius: 16,
-                padding: '16px 20px',
                 boxShadow: '0 10px 40px rgba(0,0,0,0.12)',
-                display: 'flex', alignItems: 'center', gap: 12,
-                zIndex: 10,
               }}
             >
               <div style={{
@@ -278,7 +247,7 @@ export default function WhyChooseUs() {
               AuraSutra has been at the forefront of healthcare innovation for over 15 years. Our commitment to evidence-based medicine, combined with genuine compassion, makes us the preferred choice for families across the region.
             </motion.p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[20px]">
               {reasons.map((r, i) => (
                 <motion.div
                   key={i}

@@ -34,11 +34,9 @@ export default function Appointment() {
     <section
       id="appointment"
       ref={ref}
+      className="relative overflow-hidden py-16 lg:py-[100px]"
       style={{
-        padding: '100px 0',
         background: 'linear-gradient(135deg, #0d3b1e 0%, #1b5e20 50%, #2e7d32 100%)',
-        position: 'relative',
-        overflow: 'hidden',
       }}
     >
       {/* Background decoration */}
@@ -55,7 +53,7 @@ export default function Appointment() {
         borderRadius: '50%', pointerEvents: 'none',
       }} />
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px', display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'center' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-[80px] items-center w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]">
         {/* Left */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -115,13 +113,7 @@ export default function Appointment() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          style={{
-            position: 'relative',
-            borderRadius: '28px',
-            overflow: 'hidden',
-            boxShadow: '0 30px 80px rgba(0,0,0,0.3)',
-            height: '560px',
-          }}
+          className="relative rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.3)] h-[400px] lg:h-[560px]"
         >
           <img 
             src="/appointment.png" 

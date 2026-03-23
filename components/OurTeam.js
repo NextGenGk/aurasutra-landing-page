@@ -58,10 +58,10 @@ export default function OurTeam() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="team" style={{ padding: '120px 0', background: 'linear-gradient(to bottom, #fff, #f8fafc)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px' }} ref={ref}>
+    <section id="team" className="py-16 lg:py-[120px]" style={{ background: 'linear-gradient(to bottom, #fff, #f8fafc)' }}>
+      <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-[40px]" ref={ref}>
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div className="text-center mb-12 lg:mb-[80px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -97,12 +97,7 @@ export default function OurTeam() {
         </div>
 
         {/* Team Grid */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '32px',
-          justifyContent: 'center'
-        }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[32px] justify-center">
           {teamMembers.map((member, i) => (
             <motion.div
               key={i}

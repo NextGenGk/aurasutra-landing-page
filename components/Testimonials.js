@@ -75,7 +75,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section style={{ padding: '100px 0', background: 'var(--light-bg)', position: 'relative', overflow: 'hidden' }}>
+    <section className="py-16 lg:py-[100px] relative overflow-hidden" style={{ background: 'var(--light-bg)' }}>
       {/* Background decoration */}
       <div className="spin-20" style={{
         position: 'absolute', top: '50%', left: '50%',
@@ -85,7 +85,7 @@ export default function Testimonials() {
         borderRadius: '50%', pointerEvents: 'none',
       }} />
 
-      <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 40px', textAlign: 'center' }} ref={ref}>
+      <div className="w-full max-w-[800px] mx-auto px-6 lg:px-[40px] text-center" ref={ref}>
         {/* Header */}
         <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}}>
           <span className="pill-badge">
